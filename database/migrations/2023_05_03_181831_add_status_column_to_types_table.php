@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->boolean('active')->default(true);
-            $table->timestamps();
+        Schema::table('types', function (Blueprint $table) {
+            //
+            $table->string('icon')->nullable();
         });
     }
 
@@ -29,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types');
+        Schema::table('types', function (Blueprint $table) {
+            //
+            $table->dropColumn('icon');
+        });
     }
 };
