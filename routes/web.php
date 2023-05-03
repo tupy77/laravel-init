@@ -30,5 +30,31 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/', $controller_path . '\pages\HomePage@index')->name('pages-home');
     Route::get('/page-2', $controller_path . '\pages\Page2@index')->name('pages-page-2');
 
-    
+    //users
+    Route::get('/users', $controller_path . '\pages\Users@index')->name('pages-users');
+    Route::get('/users/create', $controller_path . '\pages\Users@create')->name('users.create');
+    Route::post('/users/store', $controller_path . '\pages\Users@store')->name('users.store');
+    Route::get('/users/show/{user_id}', $controller_path . '\pages\Users@show')->name('users.show');
+    Route::post('/users/update', $controller_path . '\pages\Users@update')->name('users.update');
+    Route::get('/users/destroy/{user_id}', $controller_path . '\pages\Users@destroy')->name('users.destroy');
+
+    //types
+    Route::get('/types', $controller_path . '\pages\Types@index')->name('pages-types');
+    Route::get('/types/create', $controller_path . '\pages\Types@create')->name('types.create');
+    Route::post('/types/store', $controller_path . '\pages\Types@store')->name('types.store');
+    Route::get('/types/show/{type_id}', $controller_path . '\pages\Types@show')->name('types.show');
+    Route::get('/types/show/{type_id}', $controller_path . '\pages\Types@show')->name('types.show');
+    Route::post('/types/update', $controller_path . '\pages\Types@update')->name('types.update');
+    Route::get('/types/destroy/{type_id}', $controller_path . '\pages\Types@destroy')->name('types.destroy');
+    Route::get('/types/switch/{type_id}', $controller_path . '\pages\Types@switch')->name('types.switch');
+
+    //sos
+    Route::get('/sos', $controller_path . '\pages\Sos@index')->name('pages-sos');
+    Route::get('/sos/create', $controller_path . '\pages\Sos@create')->name('sos.create');
+    Route::post('/sos/store', $controller_path . '\pages\Sos@store')->name('sos.store');
+    Route::get('/sos/show/{so_id}', $controller_path . '\pages\Sos@show')->name('sos.show');
+    Route::get('/sos/show/{so_id}', $controller_path . '\pages\Sos@show')->name('sos.show');
+    Route::post('/sos/update', $controller_path . '\pages\Sos@update')->name('sos.update');
+    Route::get('/sos/destroy/{so_id}', $controller_path . '\pages\Sos@destroy')->name('sos.destroy');
+    Route::get('/sos/switch/{so_id}', $controller_path . '\pages\Sos@switch')->name('sos.switch');
 });
