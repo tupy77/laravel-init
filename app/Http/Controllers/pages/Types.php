@@ -12,7 +12,6 @@ class Types extends Controller
   public function index()
   {
     $types = Type::all();
-
     return view('content.pages.pages-types', ['types'=>$types]);
   }
 

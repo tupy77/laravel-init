@@ -12,7 +12,6 @@ class Users extends Controller
   public function index()
   {
     $users = User::all();
-
     return view('content.pages.pages-users', ['users'=>$users]);
   }
 
