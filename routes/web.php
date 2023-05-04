@@ -57,4 +57,13 @@ $controller_path = 'App\Http\Controllers';
     Route::post('/sos/update', $controller_path . '\pages\Sos@update')->name('sos.update');
     Route::get('/sos/destroy/{so_id}', $controller_path . '\pages\Sos@destroy')->name('sos.destroy');
     Route::get('/sos/switch/{so_id}', $controller_path . '\pages\Sos@switch')->name('sos.switch');
+
+    //Devices
+    // Route::get('/devices', $controller_path . '\pages\devices@index')->name('pages-devices');
+    // Route::get('/devices/create', $controller_path . '\pages\devices@create')->name('pages-devices-create');
+    // Route::post('/devices/store', $controller_path . '\pages\devices@store')->name('pages-devices-store');
+    // Route::get('/devices/show/{devices_id}', $controller_path . '\pages\devices@show')->name('pages-devices-show');
+    // Route::post('/devices/update', $controller_path . '\pages\devices@update')->name('pages-devices-update');
+    // Route::get('/devices/destroy/{devices_id}', $controller_path . '\pages\devices@destroy')->name('pages-devices-destroy');
+    // Route::get('/devices/switch/{devices_id}', $controller_path . '\pages\devices@switch')->name('pages-devices-switch');
 });

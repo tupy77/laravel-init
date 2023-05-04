@@ -1,11 +1,11 @@
 @php
   $configData = Helper::appClasses();
-  $opciones = [
-    (object)['name' => 'Monitor','value' => 'bx bx-tv', 'dataIcon' => 'bx bx-tv'],
-      (object)['name' => 'Ordenador','value' => 'bx bx-desktop', 'dataIcon' => 'bx bx-desktop'],
-      (object)['name' => 'Impresora','value' => 'bx bx-printer', 'dataIcon' => 'bx bx-printer'],
-      (object)['name' => 'Movil','value' => 'bx bx-mobile', 'dataIcon' => 'bx bx-mobile'],
-      (object)['name' => 'Router/Switch','value' => 'bx bx-hdd', 'dataIcon' => 'bx bx-hdd'],
+  $options = [
+    (object)['deviceType' => 'Monitor','value' => 'valbx bx-tv', 'dataIcon' => 'datbx bx-tv'],
+      (object)['deviceType' => 'Ordenador','value' => 'bx bx-desktop', 'dataIcon' => 'bx bx-desktop'],
+      (object)['deviceType' => 'Impresora','value' => 'bx bx-printer', 'dataIcon' => 'bx bx-printer'],
+      (object)['deviceType' => 'Movil','value' => 'bx bx-mobile', 'dataIcon' => 'bx bx-mobile'],
+      (object)['deviceType' => 'Router/Switch','value' => 'bx bx-hdd', 'dataIcon' => 'bx bx-hdd'],
   ];
 @endphp
 
@@ -46,9 +46,9 @@
 
           <div class="mb-3">
             <label for="selectpickerIcons" class="form-label">Icono</label>
-            <select class="selectpicker w-100 show-tick" id="selectpickerIcons" data-icon-base="bx" data-tick-icon="bx">
-              @foreach($opciones as $opcion)
-                  <option value="{{ $opcion->value }}" data-icon="{{ $opcion->dataIcon}}">{{ $opcion->name }}</option>
+            <select class="selectpicker w-100 show-tick" id="selectpickerIcons" data-icon-base="bx" data-tick-icon="bx-chex" name="deviceType">
+              @foreach($options as $option)
+                  <option value="{{ $option->value }}" data-icon="{{ $option->dataIcon}}">{{ $option->deviceType }}</option>
               @endforeach
             </select>
           </div>
