@@ -33,7 +33,7 @@ class Types extends Controller
     $type = new Type();
     $type->name = $request->name;
     $type->description = $request->description;
-    $type->icon = $request->deviceType;
+    $type->icon = $request->icon;
 
     if ($request->active)
       $type->active = $request->active;
@@ -48,7 +48,7 @@ class Types extends Controller
   {
     $type = Type::find($type_id);
 
-    return view('content.pages.types-show', ['type'=>$type]);
+    return view('content.pages.types-show', ['types'=>$type]);
 
   }
 
@@ -58,7 +58,7 @@ class Types extends Controller
     $type = Type::find($request->type_id);
     $type->name = $request->name;
     $type->description = $request->description;
-    $type->icon = $request->deviceType;
+    $type->icon = $request->icon;
 
     //$type->active = $request->active;
     $type->save();
