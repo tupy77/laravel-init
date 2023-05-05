@@ -16,7 +16,6 @@ $configData = Helper::appClasses();
             <a class="btn btn-secondary" href="{{ route('pages-devices-create') }}">Añadir Dispositivo</a>
             <a class="btn btn-warning" href="{{ route('pages-devices-export') }}">XLMS</a>
             <a class="btn btn-warning" href="{{ route('pages-devices-export-view') }}">XLMS from View</a>
-
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
