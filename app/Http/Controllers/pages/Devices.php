@@ -10,6 +10,9 @@ use App\Models\So;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ExampleMail;
+use App\Mail\UpdateMail;
 use League\Flysystem\UrlGeneration\PublicUrlGenerator;
 
 class Devices extends Controller
@@ -55,6 +58,10 @@ class Devices extends Controller
     $devices->total_slots = $request->total_slots ?? null;
     $devices->history = $request->history ?? null;
     $devices->save();
+
+    //Mandar mail
+    Mail::to('tupy1977@gmail.com')->send(new ExampleMail($devices));
+
     return redirect()->route('pages-devices');
   }
 
@@ -114,6 +121,9 @@ class Devices extends Controller
     $devices->total_slots = $request->total_slots ?? null;
     $devices->history = $request->history ?? null;
     $devices->save();
+
+    Mail::to('tupy1977@gmail.com')->send(new UpdateMail($devices));
+
     return redirect()->route('pages-devices');
   }
 
