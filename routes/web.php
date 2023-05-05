@@ -66,4 +66,7 @@ $controller_path = 'App\Http\Controllers';
     Route::post('/devices/update', $controller_path . '\pages\devices@update')->name('pages-devices-update');
     Route::get('/devices/destroy/{devices_id}', $controller_path . '\pages\devices@destroy')->name('pages-devices-destroy');
     Route::get('/devices/switch/{devices_id}', $controller_path . '\pages\devices@switch')->name('pages-devices-switch');
+    Route::get('/devices/export', $controller_path . '\pages\devices@export')->name('pages-devices-export');
+    Route::get('/devices/exportview', $controller_path . '\pages\devices@exportView')->name('pages-devices-export-view');
+
 });

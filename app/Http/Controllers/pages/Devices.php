@@ -11,9 +11,15 @@ use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
+
 use App\Mail\ExampleMail;
 use App\Mail\UpdateMail;
+
 use League\Flysystem\UrlGeneration\PublicUrlGenerator;
+
+use App\Exports\DeviceExport;
+use App\Exports\DeviceExportView;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Devices extends Controller
 {
@@ -140,5 +146,13 @@ class Devices extends Controller
     $devices_id->active = !$devices_id->active;
     $devices_id->save();
     return redirect()->route('pages-devices');
+  }
+
+  public function export(){
+    return Excel::download(new DeviceExport, 'devices.xlsx');
+  }
+
+  public function exportView(){
+    return Excel::download(new DeviceExportView, 'devicesView.xlsx');
   }
 }
