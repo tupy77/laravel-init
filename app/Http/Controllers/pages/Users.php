@@ -64,4 +64,22 @@ class Users extends Controller
 
     return redirect()->route('pages-users');;
   }
+
+  public function switch($user_id)
+  {
+    $user = User::find($user_id);
+
+    if($user->hasRole('admin'))
+    {
+      $user->removeRole('admin');
+      $user->assignRole('user');}
+    else{
+      $user->removeRole('user');
+      $user->assignRole('admin');
+    }
+
+    $user->save();
+
+    return redirect()->route('pages-users');;
+  }
 }

@@ -37,6 +37,7 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/users/show/{user_id}', $controller_path . '\pages\Users@show')->name('users.show');
     Route::post('/users/update', $controller_path . '\pages\Users@update')->name('users.update');
     Route::get('/users/destroy/{user_id}', $controller_path . '\pages\Users@destroy')->name('users.destroy');
+    Route::get('/users/switch/{user_id}', $controller_path . '\pages\Users@switch')->name('user.switch-role');
 
     //types
     Route::get('/types', $controller_path . '\pages\Types@index')->name('pages-types');

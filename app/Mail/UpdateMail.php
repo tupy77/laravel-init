@@ -33,7 +33,7 @@ class UpdateMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Update Mail',
+            subject: 'Update device Mail',
         );
     }
 

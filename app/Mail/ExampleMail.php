@@ -33,7 +33,7 @@ class ExampleMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Example 3 Mail',
+            subject: 'Creation device Mail',
         );
     }
 
