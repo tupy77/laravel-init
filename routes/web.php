@@ -70,4 +70,9 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/devices/export', $controller_path . '\pages\devices@export')->name('pages-devices-export');
     Route::get('/devices/exportview', $controller_path . '\pages\devices@exportView')->name('pages-devices-export-view');
 
+    //Reports
+    Route::get('/reports', $controller_path . '\pages\Reports@index')->name('pages-reports');
+    Route::get('/reports/create', $controller_path . '\pages\Reports@create')->name('reports.create');
+    Route::post('/reports/store', $controller_path . '\pages\Reports@delete')->name('reports.destroy');
+
 });
