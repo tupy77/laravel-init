@@ -75,4 +75,9 @@ $controller_path = 'App\Http\Controllers';
     Route::get('/reports/create', $controller_path . '\pages\Reports@create')->name('reports.create');
     Route::get('/reports/destroy/{report_id}', $controller_path . '\pages\Reports@delete')->name('reports.destroy');
 
+    //backups
+    Route::get('/backups', $controller_path . '\pages\Backups@index')->name('pages-backups');
+    Route::get('/backups/create', $controller_path . '\pages\Backups@create')->name('backups.create');
+    Route::get('/backups/destroy/{backup_id}', $controller_path . '\pages\Backups@delete')->name('backups.destroy');
+    Route::get('/backups/download/{created_at}', $controller_path . '\pages\Backups@download')->name('backups.download');
 });
