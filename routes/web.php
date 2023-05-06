@@ -73,6 +73,6 @@ $controller_path = 'App\Http\Controllers';
     //Reports
     Route::get('/reports', $controller_path . '\pages\Reports@index')->name('pages-reports');
     Route::get('/reports/create', $controller_path . '\pages\Reports@create')->name('reports.create');
-    Route::post('/reports/store', $controller_path . '\pages\Reports@delete')->name('reports.destroy');
+    Route::get('/reports/destroy/{report_id}', $controller_path . '\pages\Reports@delete')->name('reports.destroy');
 
 });

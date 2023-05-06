@@ -4,7 +4,7 @@ namespace App\Http\Controllers\pages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Device, Type, So};
+use App\Models\{Device, Type, So, Report};
 //use App\Models\Type;
 //use App\Models\So;
 
@@ -33,11 +33,12 @@ class HomePage extends Controller
     }
 
     $sos = So::where('active', true)->count();
-    $Type = Type::where('active', true)->count();
-    $Device = Device::where('active', true)->count();
+    $type = Type::where('active', true)->count();
+    $device = Device::where('active', true)->count();
+    $report = Report::all()->count();
 
 
 
-    return view('content.pages.pages-home', [ 'n_sos'=> $sos ,  'n_type'=> $Type, 'n_device'=> $Device]);
+    return view('content.pages.pages-home', [ 'n_sos'=> $sos ,  'n_type'=> $type, 'n_device'=> $device, 'n_report'=> $report]);
   }
 }

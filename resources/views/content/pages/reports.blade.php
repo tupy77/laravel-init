@@ -16,6 +16,7 @@
       <thead>
         <tr>
           <th>Id</th>
+          <th>Nombre</th>
           <th>Creado en</th>
           <th>Acciones</th>
         </tr>
@@ -25,9 +26,10 @@
         <tr>
         </tr>
         <td>{{$report->id}}</td>
+        <td>{{$report->url}}</td>
         <td>{{$report->created_at}}</td>
         <td>
-          <a href="{{$report->url}}">Download</a> | <a href="{{ route('reports.destroy', $report->id) }}">Borrar</a>
+          <a href="/storage/pdf/{{$report->url}}">Download</a> | <a href="{{ route('reports.destroy', $report->id) }}">Borrar</a>
         </td>
         @endforeach
       </tbody>
